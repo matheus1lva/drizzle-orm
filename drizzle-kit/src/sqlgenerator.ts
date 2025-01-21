@@ -3573,7 +3573,7 @@ class PgCreateSchemaConvertor extends Convertor {
 
 	convert(statement: JsonCreateSchema) {
 		const { name } = statement;
-		return `CREATE SCHEMA "${name}";\n`;
+		return `CREATE SCHEMA IF NOT EXIST "${name}";\n`;
 	}
 }
 
